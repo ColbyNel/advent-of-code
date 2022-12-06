@@ -1,1 +1,0 @@
-    if (elfArray[i] !== "") {
