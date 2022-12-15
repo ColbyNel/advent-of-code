@@ -42,6 +42,7 @@ var alphabet = [
   "K",
   "L",
   "M",
+  "N",
   "O",
   "P",
   "Q",
@@ -50,6 +51,7 @@ var alphabet = [
   "T",
   "U",
   "V",
+  "W",
   "X",
   "Y",
   "Z",
@@ -92,14 +94,12 @@ function convertArray(commonLetter) {
 function problemSolver(inputArray) {
   var splitArray1 = inputArray.slice(0, inputArray.length / 2);
   var splitArray2 = inputArray.slice(inputArray.length / 2, inputArray.length);
-
+  var found = false;
   for (var i = 0; i < splitArray1.length; i++) {
     for (var j = 0; j < splitArray2.length; j++) {
-      if (
-        splitArray1[i] === splitArray2[j] &&
-        !commonLetter.includes(splitArray1[i])
-      ) {
+      if (splitArray1[i] === splitArray2[j] && !found) {
         commonLetter.push(splitArray1[i]);
+        found = true;
         // break;
       }
       //break;
